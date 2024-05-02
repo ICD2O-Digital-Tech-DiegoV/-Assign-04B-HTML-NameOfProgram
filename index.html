@@ -1,9 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Museum Admission" />
+    <meta name="keywords" content="immaculata, ics2o" />
+    <meta name="author" content="Diego" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io (1)/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io (1)/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io (1)/favicon-16x16.png" />
+    <link rel="manifest" href="./favicon_io (1)/site.webmanifest" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Museum Admission</title>
   </head>
   <body>
-    <p>Paragraph</p>
+    <!-- references javascript file -->
+    <script src="./js/script.js"></script>
+    <h1>Museum Admission</h1>
+     <div id="backdrop">
+      <h3>Enter your age and the day:</h3>
+      <p>
+        <!-- form to get user input for their age, as well as the day of the week through a dropdown menu, which will help determine whether they are elegible for a discount or free entry -->
+        <form action="javascript:museumAdmission()">
+          <label for="age">Enter your Age:</label>
+          <!-- input for age -->
+          <input type="number" id="age" min="0" step="1" placeholder="age" /><br><br>
+          <label for="day">Day of The Week:</label>
+            <!-- dropdown menu with different days of the week as options -->
+            <select name="day" id="day">
+              <option id="option1">-- Day of the Week --</option>
+              <option value="Monday">Small</option>
+              <option value="Tuesday">Medium</option>
+              <option value="Wednseday">Large</option>
+              <option value="Thursday">Xlarge</option>
+            </select>
+          <input type="submit" value="Check" />
+        </form>
+      </p>
+      <!-- Create a space where the user information will be displayed -->
+
+
+      <div id="user-info"></div>
+       <img src="./images/JurassicPark.png" alt="slug" width="600" height="300" />
+    </div>
+    <br>
   </body>
 </html>

@@ -1,4 +1,54 @@
-/* Created by: Mr. Coxall
-* Created on: Sep 2020
-* This file contains the CSS for index.html
-*/
+body {
+  background-color: #09489a;
+  font-size: 10pt;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  color: #58f901;
+  line-height: 14pt;
+  padding-left: 5pt;
+  padding-right: 5pt;
+  padding-top: 5pt;
+}
+
+#input {
+  border-width: 10px;
+  border-color: #01dcf9;
+}
+
+h1 {
+  font: 18pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 20pt;
+  color: #08e0fd;
+}
+
+h2 {
+  font: 14pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 18pt;
+  color: #141414;
+}
+
+h3 {
+  font: 12pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 16pt;
+  color: #00e1ff;
+}
+
+p.subheader {
+  font-weight: bold;
+  color: #00e1ff;
+}
+
+div {
+  font-weight: bold;
+  color: #ffffff;
+  margin: 5px;
+}
+
+img {
+  padding: 3pt;
+  float: left;
+}
+
+a {

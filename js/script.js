@@ -3,9 +3,8 @@
 // This file contains the JS functions for index.html
 
 //Elements
-// Dropdown Menus
+// Dropdown Menu
 const sizesElement = document.getElementById('Sizes');
-const flavorsElement = document.getElementById('flavors');
 
 // Check box elemnts
 const extraBobaElement = document.getElementById('Extra Boba');
@@ -28,16 +27,18 @@ let sizeCosts = {
 
 function order() {
   let size = sizesElement.value;
-  let flavor = flavorsElement.value;
+  let flavorInput = document.querySelector('input[name="options"]:checked')
 
   if (size == "option1") {
     resultDiv.innerText = "Please Chose a Size!";
     return;
   }
-  if (flavor == "option1") {
-    resultDiv.innerText = "Please Chose a Flavor! Water is free.";
+  if (flavorInput == null) {
+    resultDiv.innerText = "Please Chose a Flavor!";
     return;
   }
+  let flavor = flavorInput.value;
+  
   
   let sizeCost = sizeCosts[size];
   let flavorCost = 0;
@@ -46,20 +47,44 @@ function order() {
   subtotal += sizeCost;
   subtotal += flavorCost;
 
+  let extra_message = ""
   if (extraBobaElement.checked) {
     subtotal += 1.00;
+    if (extra_message != "") {
+      extra_message += ", "
+    }
+    extra_message += "Extra Boba"
   }
   if (godlyAmountOfBobaElement.checked) {
     subtotal += 2.00;
+    if (extra_message != "") {
+      extra_message += ", "
+    }
+    extra_message += "Godly Amount of Boba"
   }
   if (leacheJellyElement.checked) {
     subtotal += 1.00;
+    if (extra_message != "") {
+      extra_message += ", "
+    }
+    extra_message += "Lychee Jelly"
   }
   if (coconutJellyElement.checked) {
     subtotal += 1.00;
+    if (extra_message != "") {
+      extra_message += ", "
+    }
+    extra_message += "Coconut Jelly"
   }
   if (magicalGummiesElement.checked) {
     subtotal += 1.00;
+    if (extra_message != "") {
+      extra_message += ", "
+    }
+    extra_message += "Magical Gummies"
+  }
+  if (extra_message != "") {
+    extra_message = "with " + extra_message;
   }
 
   const HST = 0.13;
@@ -67,8 +92,8 @@ function order() {
   let total = subtotal + tax;
 
   resultDiv.innerHTML = 
-    `You ordered a ${size} ${flavor} bubble tea! Thank you for ordering! <br>
-    Subtotal : ${subtotal} <br>
-    Tax : ${tax} <br>
-    Total : ${total}`;
+    `You ordered a ${size} ${flavor} bubble tea ${extra_message}! Thank you for ordering! <br>
+    Subtotal : $${subtotal} <br>
+    Tax : $${tax.toFixed(2)} <br>
+    Total : $${total.toFixed(2)}`;
 }
